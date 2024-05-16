@@ -25,28 +25,5 @@ public class Util {
             throw new RuntimeException(e);
         } return conn;
     }
-
-
 }
 
-//    public static void main(String[] args) {
-//        Connection connection;
-//
-//        try {
-//            connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
-//            Statement statement = connection.createStatement();
-//
-//            if(!connection.isClosed()) {
-//                System.out.println("Ustanovleno");
-//            }
-//            connection.close();
-//
-//            if(!connection.isClosed()) {
-//                System.out.println("ne Ustanovleno");
-//            }
-//        } catch (SQLException e) {
-//            throw new RuntimeException(e);
-//        }
-//    }
-//    // реализуйте настройку соеденения с БД
-//}
