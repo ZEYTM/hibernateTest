@@ -19,8 +19,7 @@ public class UserDaoJDBCImpl implements UserDao {
 
     @Override
     public void createUsersTable() {
-        try {
-            Statement stmt = Util.getConnection().createStatement();
+        try (Statement stmt = Util.getConnection().createStatement()){
             stmt.executeUpdate("CREATE TABLE IF NOT EXISTS users (" +
                     "id BIGINT AUTO_INCREMENT, " +
                     "name VARCHAR(50), " +
