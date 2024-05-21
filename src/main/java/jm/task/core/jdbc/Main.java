@@ -1,16 +1,22 @@
 package jm.task.core.jdbc;
 
 import jm.task.core.jdbc.dao.UserDao;
+import jm.task.core.jdbc.dao.UserDaoHibernateImpl;
 import jm.task.core.jdbc.dao.UserDaoJDBCImpl;
 import jm.task.core.jdbc.model.User;
 import jm.task.core.jdbc.service.UserService;
 import jm.task.core.jdbc.service.UserServiceImpl;
+import jm.task.core.jdbc.util.Util;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
 
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        // реализуйте алгоритм здесь
+
+//         реализуйте алгоритм здесь
 
         UserService userService = new UserServiceImpl();
 
@@ -33,10 +39,10 @@ public class Main {
             System.out.println(user);
         }
 
-        // Очистка таблицы User(ов)
+//         Очистка таблицы User(ов)
         userService.cleanUsersTable();
 
-        // Удаление таблицы
+//         Удаление таблицы
         userService.dropUsersTable();
 
     }
