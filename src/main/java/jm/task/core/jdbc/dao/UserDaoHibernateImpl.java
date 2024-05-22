@@ -11,7 +11,6 @@ import java.util.List;
 
 public class UserDaoHibernateImpl implements UserDao {
     public UserDaoHibernateImpl() {
-
     }
 
 
@@ -20,10 +19,7 @@ public class UserDaoHibernateImpl implements UserDao {
         Transaction transaction = null;
         try (Session session = Util.getSessionFactory().openSession()) {
             transaction = session.beginTransaction();
-            String sql = "CREATE TABLE IF NOT EXISTS users (" +
-                    "id BIGINT AUTO_INCREMENT PRIMARY KEY, " +
-                    "name VARCHAR(50) NOT NULL, " +
-                    "lastname VARCHAR(50) NOT NULL, " + // Убран лишний символ запятой
+            String sql = "CREATE TABLE IF NOT EXISTS users (" + "id BIGINT AUTO_INCREMENT PRIMARY KEY, " + "name VARCHAR(50) NOT NULL, " + "lastname VARCHAR(50) NOT NULL, " + // Убран лишний символ запятой
                     "age INT NOT NULL)"; // Исправлен тип данных для возраста
             Query query = session.createSQLQuery(sql);
             query.executeUpdate();
