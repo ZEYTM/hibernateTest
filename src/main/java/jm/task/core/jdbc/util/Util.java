@@ -21,7 +21,7 @@ public class Util {
     static {
         try {
             Configuration configuration = new Configuration();
-            configuration.configure(); // Загружает hibernate.cfg.xml, если он существует, но можно обойтись без него.
+            configuration.configure();
 
 
             configuration.addAnnotatedClass(User.class);
