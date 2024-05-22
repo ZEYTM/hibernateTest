@@ -8,22 +8,22 @@ import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
-
-
 import  java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
 public class Util {
+
+    private static final String URL = "jdbc:mysql://localhost:3306/catabase";
+    private static final String USERNAME = "root";
+    private static final String PASSWORD = "Maga1993!";
     private static SessionFactory sessionFactory;
 
     static {
         try {
             Configuration configuration = new Configuration();
             configuration.configure();
-
-
             configuration.addAnnotatedClass(User.class);
 
             ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
@@ -38,11 +38,6 @@ public class Util {
     public static SessionFactory getSessionFactory() {
         return sessionFactory;
     }
-
-
-    private static final String URL = "jdbc:mysql://localhost:3306/catabase";
-    private static final String USERNAME = "root";
-    private static final String PASSWORD = "Maga1993!";
 
     public static Connection getConnection() {
         Connection conn = null;
